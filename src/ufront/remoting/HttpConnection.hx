@@ -22,7 +22,11 @@ class HttpConnection extends haxe.remoting.HttpConnection {
 		// Set up the Http Request
 		var h = new HttpWithUploads( __url, false, TIMEOUT );
 		var data = null;
+		#if (cs || java)
+		var status = 0;
+		#else
 		var status = null;
+		#end
 
 		// Serialize the request details.
 		var s = new RemotingSerializer( RDClientToServer );

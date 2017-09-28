@@ -117,14 +117,14 @@ class TmpFileUpload extends BaseUpload implements UFFileUpload {
 				var fh = File.read( tmpFileName );
 				var pos = 0;
 				function readNext() {
-					var final = false;
+					var final1 = false;
 					var surprise:Surprise<Noise,Error>;
 					try {
 						var bytes = fh.read( partSize ) ;
 						surprise = onData( bytes, pos, bytes.length );
 					}
 					catch ( e:Eof ) {
-						final = true;
+						final1 = true;
 						var bytes = fh.readAll( partSize );
 						surprise = onData( bytes, pos, bytes.length );
 					}
@@ -133,7 +133,7 @@ class TmpFileUpload extends BaseUpload implements UFFileUpload {
 					}
 					surprise.handle(function(outcome) switch outcome {
 						case Success(_):
-							if ( final==false ) {
+							if ( final1==false ) {
 								pos += partSize;
 								readNext();
 							}

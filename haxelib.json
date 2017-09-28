@@ -6,12 +6,12 @@
   "description": "A full-featured MVC Framework for Neko, PHP, NodeJS and browser JS, that runs on both server and client.",
   "contributors": ["fponticelli","jason"],
   "releasenote": "Improved platform consistency, UFClientActions, TemplateHelpers, ViewResult partials, Virtual URLs, Client Side Uploads, Remoting API Uploads and more. See CHANGES.md for details.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "url": "https://github.com/ufront/ufront-mvc",
   "dependencies": {
     "compiletime": "2.6.0",
-    "minject": "2.0.0-rc.1",
-    "tink_core": "1.0.0-rc.11",
-    "tink_macro": "0.6.4"
+    "minject": "git",
+    "tink_core": "1.15.0",
+    "tink_macro": "0.15.0"
   }
 }
